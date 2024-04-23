@@ -8,15 +8,23 @@
   <body>
     <h1>V1.0.1</h1>
     <button onclick="teste()">Pegar base 64</button>
-    <div id="imageContainer"></div>
+    <div id="imageContainer1"></div>
+    <div id="imageContainer2"></div>
+    <div id="imageContainer3"></div>
     <button onclick="teste2()">Pegar file</button>
     <div id="imageFile"></div>
   </body>
   <script>
     window.addEventListener('imageBase64', (base64Image) => {
         var imageElement = document.createElement('img');
-        imageElement.src = 'data:image/png;base64,' + base64Image.detail;
-        document.getElementById('imageContainer').appendChild(imageElement);
+        var imageElement2 = document.createElement('img');
+        var imageElement3 = document.createElement('img');
+        imageElement1.src = 'data:image/png;base64,' + base64Image.detail;
+        imageElement2.src = 'data:image/jpg;base64,' + base64Image.detail;
+        imageElement3.src = 'data:image/webpg;base64,' + base64Image.detail;
+        document.getElementById('imageContainer1').appendChild(imageElement);
+        document.getElementById('imageContainer2').appendChild(imageElement);
+        document.getElementById('imageContainer3').appendChild(imageElement);
         console.log('TO AQUI')
     });
 
