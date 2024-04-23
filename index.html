@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>V1.0.0</h1>
+    <button onclick="teste()">Teste</button>
+    <div id="imageContainer"></div>
+  </body>
+  <script>
+    window.addEventListener('imageBase64', (base64Image) => {
+        var imageElement = document.createElement('img');
+        imageElement.src = 'data:image/png;base64,' + base64Image;
+        document.getElementById('imageContainer').appendChild(imageElement);
+        console.log('TO AQUI')
+    });
+
+    function teste() {
+        window.ImageFromGallery?.postMessage('Mudança de ambiente');
+    }
+  </script>
+</html>
