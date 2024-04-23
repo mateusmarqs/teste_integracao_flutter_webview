@@ -6,14 +6,12 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>V1.0.2</h1>
+    <h1>V1.0.3</h1>
     <button onclick="teste()">Pegar base 64</button>
     <div id="imageContainer1"></div>
     <div id="imageContainer2"></div>
     <div id="imageContainer3"></div>
     <div id="imageContainer4"></div>
-    <button onclick="teste2()">Pegar file</button>
-    <div id="imageFile"></div>
   </body>
   <script>
     window.addEventListener('imageBase64', (base64Image) => {
@@ -25,25 +23,16 @@
         imageElement2.src = 'data:image/jpg;base64,' + base64Image.detail;
         imageElement3.src = 'data:image/webp;base64,' + base64Image.detail;
         imageElement4.src = 'data:image/jpeg;base64,' + base64Image.detail;
-        document.getElementById('imageContainer1').appendChild(imageElement);
-        document.getElementById('imageContainer2').appendChild(imageElement);
-        document.getElementById('imageContainer3').appendChild(imageElement);
+        document.getElementById('imageContainer1').appendChild(imageElement1);
+        document.getElementById('imageContainer2').appendChild(imageElement2);
+        document.getElementById('imageContainer3').appendChild(imageElement3);
+        document.getElementById('imageContainer4').appendChild(imageElement4);
         console.log('TO AQUI')
     });
 
-    window.addEventListener('fileFromGallery', (file) => {
-        var imageElement = document.createElement('img');
-        imageElement.src = file.detail;
-        document.getElementById('imageFile').appendChild(imageElement);
-        consol.log('AQUI O FILE:', file.detail)
-    });
 
     function teste() {
         window.ImageFromGallery?.postMessage('Mudança de ambiente');
-    }
-
-    function teste2() {
-        window.FileFromGallery?.postMessage('Mudança de ambiente');
     }
   </script>
 </html>
