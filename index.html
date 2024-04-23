@@ -6,7 +6,7 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>V1.0.0</h1>
+    <h1>V1.0.1</h1>
     <button onclick="teste()">Pegar base 64</button>
     <div id="imageContainer"></div>
     <button onclick="teste2()">Pegar file</button>
@@ -15,16 +15,16 @@
   <script>
     window.addEventListener('imageBase64', (base64Image) => {
         var imageElement = document.createElement('img');
-        imageElement.src = 'data:image/png;base64,' + base64Image;
+        imageElement.src = 'data:image/png;base64,' + base64Image.detail;
         document.getElementById('imageContainer').appendChild(imageElement);
         console.log('TO AQUI')
     });
 
-    window.addEventListener('filFromGallery', (file) => {
+    window.addEventListener('fileFromGallery', (file) => {
         var imageElement = document.createElement('img');
-        imageElement.src = file;
+        imageElement.src = file.detail;
         document.getElementById('imageFile').appendChild(imageElement);
-        consol.log('AQUI O FILE:', file)
+        consol.log('AQUI O FILE:', file.detail)
     });
 
     function teste() {
