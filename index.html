@@ -7,8 +7,10 @@
   </head>
   <body>
     <h1>V1.0.0</h1>
-    <button onclick="teste()">Teste</button>
+    <button onclick="teste()">Pegar base 64</button>
     <div id="imageContainer"></div>
+    <button onclick="teste2()">Pegar file</button>
+    <div id="imageFile"></div>
   </body>
   <script>
     window.addEventListener('imageBase64', (base64Image) => {
@@ -18,8 +20,19 @@
         console.log('TO AQUI')
     });
 
+    window.addEventListener('filFromGallery', (file) => {
+        var imageElement = document.createElement('img');
+        imageElement.src = file;
+        document.getElementById('imageFile').appendChild(imageElement);
+        consol.log('AQUI O FILE:', file)
+    });
+
     function teste() {
         window.ImageFromGallery?.postMessage('Mudança de ambiente');
+    }
+
+    function teste2() {
+        window.FileFromGallery?.postMessage('Mudança de ambiente');
     }
   </script>
 </html>
